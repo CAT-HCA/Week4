@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css" <body>
+    <!--START NAV BAR-->
+
+    <body>
+    <nav class="navbar navbar-dark navbar-expand-lg p-3 px-md-4 bg-info border-bottom shadow-sm"> 
+        <span class="navbar-brand mb-0 h1">
+            <a class="text-white navHome" href="index.html">CAT Outdoor Adventures</a></span>
+        <button class="navbar-toggler btn-white" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse float-right flex-row-reverse" id="navbarNavAltMarkup">
+            <div class="navbar-nav"></div>
+            <a class="nav-item nav-link p-2 mr-2 active" href="mountains.html">Explore Mountains</a>
+            <a class="nav-item nav-link p-2 mr-2 inactive" href="national_parks.html">Explore National
+                Parks</a>
+        </div>
+    </nav>
+    <!--END NAV BAR-->
+
+    <!-- form method SHOULD be post, not get to protect PII would use below
+       <form class="container" action="login.html" method="POST">-->
+    <form class="container mt-5" action="submit" method="GET">
+        <!--PERSONAL INFORMATION SECTION-->
+        <div class="form-row">
+            <h2 class="text-info col-12">Personal Information</h2>
+
+            <div class="form-group col-md-5">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName"
+                    required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="middleInitial">Middle Initial</label>
+                <input type="text" class="form-control" id="middleInitial" name="middleInitial"
+                    placeholder="Middle Initial">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName" required>
+            </div>
+            <div class="form-group col-12">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="inputAddress"
+                    required>
+            </div>
+            <div class="form-group col-12">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" name="inputAddress2"
+                    placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-group col-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Boston" required>
+            </div>
+            <div class="form-group col-3">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control" id="inputState" name="inputState" placeholder="MA" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="12345" name="inputZip" required>
+            </div>
+        </div>
+        <div id="billAddressDD" class="form-group container">
+            <label for="addressDropDown">Is your billing address the same?</label>
+            <select class="form-control" id="addressDropDown" name="addressDropDown">
+                <option value="billSameAddress">Choose one</option>
+                <option value="billSameAddress">Bill to Same Address</option>
+                <option value="billDiffAddress">Bill to Different Address</option>
+            </select>
+        </div>
+        <div id="hiddenDiv" class="col-12">
+            <div class="form-group col-md-5">
+                <label for="firstNameBill">First Name</label>
+                <input type="text" class="form-control" id="firstNameBill" placeholder="First Name" name="firstNameBill"
+                    required>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="lastNameBill">Last Name</label>
+                <input type="text" class="form-control" id="lastNameBill" placeholder="Last Name" name="lastNameBill"
+                    required>
+            </div>
+            <div class="form-group col-12">
+                <label for="inputAddressBill">Address</label>
+                <input type="text" class="form-control" id="inputAddressBill" placeholder="1234 Main St"
+                    name="inputAddressBill" required>
+            </div>
+            <div class="form-group col-6">
+                <label for="inputCityBill">City</label>
+                <input type="text" class="form-control" id="inputCityBill" name="inputCityBill" placeholder="Boston"
+                    required>
+            </div>
+            <div class="form-group col-3">
+                <label for="inputStateBill">State</label>
+                <input type="text" class="form-control" id="inputStateBill" name="inputStateBill" placeholder="MA"
+                    required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputZipBill">Zip</label>
+                <input type="text" class="form-control" id="inputZipBill" placeholder="12345" name="inputZipBill"
+                    required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-9 mt-3">
+                <label for="inputCC">Credit Card Number</label>
+                <input type="text" class="form-control" id="inputCC" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?          # Visa
+                |  (?:5[1-5][0-9]{2}                # MasterCard
+                    | 222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}
+                |  3[47][0-9]{13}                   # American Express
+                |  3(?:0[0-5]|[68][0-9])[0-9]{11}   # Diners Club
+                |  6(?:011|5[0-9]{2})[0-9]{12}      # Discover
+                |  (?:2131|1800|35\d{3})\d{11}      # JCB
+               )$" placeholder="1234 5678 1234 5678" required>
+            </div>
+            <div class="form-group col-9 mt-3">
+                <label for="inputExpMon">Exp Month / Year</label>
+                <input type="number" class="form-control" id="inputExpMon" pattern="(0[1-9]|10|11|12)/20[0-9]{2}$"
+                    placeholder="01/2021" required>
+            </div>
+            <div class="form-group col-4">
+                <label for="ccCode">Security Code</label>
+                <input type="number" class="form-control" id="ccCode" pattern="/^[0-9]{3,4}$/" placeholder="123"
+                    required>
+            </div>
+            <div id="msgDiv">
+            </div>
+            <div class="mx-auto border-top">
+                <input class="btn btn-info my-3" type="submit" id="submitBtn" name="submitBtn" value="Submit">
+            </div>
+        </div>
+    </form>
+
+
+    <!-- FOOTER -->
+    <footer class=" w-100 footer border-top border-info">
+        <div class="col-12 text-center">
+            <p>Cori Trudeau - HartCode Academy 2019 <br>
+                <span class="font-weight-light mt-1">Disclaimer: This is a fictional company and site for
+                    educational
+                    purposes only.</span></p>
+        </div>
+    </footer>
+    <!--END FOOTER-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
+    </body>
+
+</html>
