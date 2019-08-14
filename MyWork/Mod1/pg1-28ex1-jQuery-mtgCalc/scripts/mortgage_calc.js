@@ -4,7 +4,7 @@
 "use strict";
 
 /*
-*This is the window.onload event handler
+*This is the document ready event handler
 */
 $( function () 
 {
