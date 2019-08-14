@@ -8,38 +8,21 @@
 */
 $( function () 
 {
-    let principalField = $("#inputPrincipal");
-    //var principalField = document.getElementById("inputPrincipal");
-    let interestRateField = $("#inputInterestRate");
-    //var interestRateField = document.getElementById("inputInterestRate");
-    let loanLengthField = $("#inputLoanLength");
-    //var loanLengthField = document.getElementById("inputLoanLength");
 
-    //let calcBtn = document.getElementById("calcBtn");
-
-    /*
-    *This is the anonymous function serving as the click event of the calcBtn
-    */
    $("#calcBtn").on("click", function ()
     {
         var term, interestRate, loanAmount, monthlyPayment, totalLoan;
 
         //Get Data from UI
-        term = Number(loanLengthField.val())*12;
-        //term = Number(loanLengthField.value)*12;
-        interestRate = Number(interestRateField.val())/1200;
-        //interestRate = Number(interestRateField.value)/1200;
-        loanAmount = Number(principalField.val());
-        //loanAmount = Number(principalField.value);
-
+        term = Number($("#inputLoanLength").val())*12;
+        interestRate = Number($("#inputInterestRate").val())/1200;
+        loanAmount = Number($("#inputPrincipal").val());
         //Process Data
         monthlyPayment = calculateMonthlyPayment(term,interestRate,loanAmount);
         loanAmount = calculateTotalLoan(monthlyPayment,term);
-
         //Display results
         monthlyPayment = "$" + monthlyPayment.toFixed(2);
-        $("#paymentOutput").val("monthlyPayment");
-
+        $("#paymentOutput").val(monthlyPayment);
         totalLoan = "$" + loanAmount.toFixed(2);
         $("#loanCostOutput").val(totalLoan);
    });
