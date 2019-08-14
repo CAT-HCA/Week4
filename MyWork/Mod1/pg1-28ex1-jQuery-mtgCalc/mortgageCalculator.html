@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg p-3 px-md-4 bg-info border-bottom shadow-sm">
         <span class="navbar-brand mb-0 h1">
-            <a class="text-white navHome" href="#">Week 3 pg 3-37 Exercise 1</a></span>
+            <a class="text-white navHome" href="#">Week 4 pg 1-28 ex 1 - jQuery Mortgage Calculator</a></span>
         <button class="navbar-toggler btn-white" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,20 +26,42 @@
     </nav>
     <!--END NAV BAR-->
 
-    <!-- form method SHOULD be post, not get to protect PII would use below
-       <form class="container" action="login.html" method="POST">-->
-    <form class="container mt-5" action="submit" method="GET">
-        <!--PERSONAL INFORMATION SECTION-->
-        <div class="form-group col-12">
-            <label for="textField">Please enter your text here</label>
-            <textarea class="form-control" id="textField" rows="6" maxlength="50"></textarea>
+    <header class="container">
+    <h1 class="text-info">Mortgage Calculator</h1>
+    <p>Input your principal, interest rate, and loan length and discover your monthly payments and total cost</p>
+  </header>
+
+  <main class="container">
+    <form class="row" action="#" method="GET">
+      <div class="container col-6">
+        <div class="form-group col">
+          <label for="inputPrincipal">Principal Amount: </label>
+          <input type="text" class="form-control" id="inputPrincipal" name="inputPrincipal" required="required"
+            autofocus="autofocus" />
         </div>
-        <div>
-            <p id="msgField">
-                
-            </p>
+        <div class="form-group col">
+          <label for="inputInterestRate">Interest Rate: </label>
+          <input type="text" class="form-control" id="inputInterestRate" name="inputInterestRate" required="required" />
         </div>
+        <div class="form-group col">
+          <label for="inputLoanLength">Length of Loan: </label>
+          <input type="text" class="form-control mb-2" id="inputLoanLength" name="inputLoanLength" required="required" />
+          <input class="form-group btn btn-info text-white" type="button" id="calcBtn" value="CALCULATE" />
+          <input class="form-group btn btn-info text-white" type="reset" id="resetBtn" value="RESET" />
+        </div>
+      </div>
+      <div class="container col-6">
+        <div class="form-group col">
+          <label for="paymentOutput">Monthly Payments: </label>
+          <input type="text" class="form-control" id="paymentOutput" name="paymentOutput" />
+        </div>
+        <div class="form-group col">
+          <label for="loanCostOutput">Total Loan Cost: </label>
+          <input type="text" class="form-control" id="loanCostOutput" name="loanCostOutput" />
+        </div>
+      </div>
     </form>
+  </main>
 
 
     <!-- FOOTER -->
@@ -62,7 +84,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/mortgageCalc.js"></script>
 </body>
 
 </html>
