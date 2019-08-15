@@ -37,14 +37,25 @@
     <!--Main mountains page content-->
     <main class="container mt-3">
         <!--Display results table, dynamically created in js-->
-        <table id="detailTblOutput" class="container table table-bordered table-striped col-10 mt-5">
-            <thead>
-                <tr id="tHeadRow" class="">
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-            </tbody>
-        </table>
+        <form id="detailTblOutputForm" action="#" method="get">
+            <table id="detailTblOutput" class="container table table-bordered table-striped col-10 mt-5">
+                <thead>
+                    <tr id="tHeadRow" class="">
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+            <div class="text-center">
+                <input class="btn btn-info w-25" type="button" id="editBtn" name="editBtn" value="Edit">
+            </div>
+            <div id="hiddenEditDiv" class="hideDiv">
+                <div class="text-center">
+                    <input class="btn btn-primary w-25" type="button" id="updateBtn" name="updateBtn" value="Update">
+                    <input class="btn btn-danger w-25" type="button" id="cancelBtn" name="cancelBtn" value="Cancel">
+                </div>
+            </div>
+        </form>
     </main>
 
 

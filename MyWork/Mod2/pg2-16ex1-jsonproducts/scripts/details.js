@@ -26,7 +26,49 @@ $(function() {
 				}
 			}
 		}
+		let editBtn = $("#editBtn");
+		let updateBtn = $("#updateBtn");
+		let cancelBtn = $("#cancelBtn");
+		
+		let productNameCurVal =  $("#productnameOutputField").val();
+		let unitPriceCurVal =  $("#unitpriceOutputField").val();
+		let unitsInStockCurVal =  $("#unitsinstockOutputField").val();
+		let categorynameCurVal =  $("#categorynameOutputField").val();
+		let supplierCurVal =  $("#supplierOutputField").val();
+		let discontinuedCurVal =  $("#discontinuedOutputField").val();;
+
+		editBtn.on("click", function() {
+			editBtn.css("display", "none");
+			$(":input:not([id='productidOutputField'])").prop("disabled", false);
+			$("#hiddenEditDiv").toggleClass("hideDiv");
+
+
+		});
+		cancelBtn.on("click", function() {
+			$("#hiddenEditDiv").toggleClass("hideDiv");
+			$(":input:not([id='productidOutputField'])").prop("disabled", true);
+			editBtn.css("display", "");
+			editBtn.prop("disabled", false);
+			$("#productnameOutputField").val(productNameCurVal);
+			$("#unitpriceOutputField").val(Number(unitPriceCurVal).toFixed(2));
+			$("#unitsinstockOutputField").val(unitsInStockCurVal);
+			$("#categorynameOutputField").val(categorynameCurVal);
+			$("#supplierOutputField").val(supplierCurVal);
+			$("#discontinuedOutputField").val(discontinuedCurVal);
+
+		});
+		updateBtn.on("click", function() {
+			alert("Update Functionality Coming Soon!");
+		});
+
+
+
 	});
+
+
+
+
+
 });
 
 function buildRow(property, value) {
@@ -43,7 +85,7 @@ function buildRow(property, value) {
 		inputId +
 		'" id="' +
 		inputId +
-		'" readonly /></td></tr>"';
+		'" disabled /></td></tr>"';
 		console.log(markup);
 	$("#tableBody").append(markup);
 }
