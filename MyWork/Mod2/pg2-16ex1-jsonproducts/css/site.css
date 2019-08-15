@@ -45,3 +45,8 @@ legend {
 #mtnTblOutput {
 	display: none;
 }
+
+
+.hideDiv {
+	display: none;
+}
