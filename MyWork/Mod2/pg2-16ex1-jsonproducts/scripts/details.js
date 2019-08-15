@@ -12,24 +12,38 @@ $(function() {
 		for (let i = 0; i < objLen; i++) {
 			let selectedItem = productsObj.Items[i];
 			if (productId == selectedItem.ProductID) {
-                buildRow("Product ID", selectedItem.ProductID);
-                buildRow("Product Name", selectedItem.ProductName);
+				buildRow("Product ID", selectedItem.ProductID);
+				buildRow("Product Name", selectedItem.ProductName);
 				buildRow("Unit Price", Number(selectedItem.UnitPrice).toFixed(2));
 				buildRow("Units In Stock", selectedItem.UnitsInStock);
 				buildRow("Category Name", selectedItem.CategoryName);
 				buildRow("Supplier", selectedItem.Supplier);
-                buildRow("Discontinued", selectedItem.Discontinued);
-                if (selectedItem.Discontinued){
-                    $("tr:contains(Discontinued) input").css({
-                        "color" : "red"
-                    });
-                }
-            }
+				buildRow("Discontinued", selectedItem.Discontinued);
+				if (selectedItem.Discontinued == "true") {
+					$("tr:contains(Discontinued) input").css({
+						color: "red",
+					});
+				}
+			}
 		}
 	});
 });
 
 function buildRow(property, value) {
-	let markup = "<tr><td>" + property + "</td><td><input type='text' value='" + value + "'readonly/></td></tr>";
+	let propString = property.split(" ");
+	let inputId = ((propString.join("")).toLowerCase()) + "OutputField";
+
+
+	let markup =
+		"<tr><td>" +
+		property +
+		'</td><td><input class="w-75 pl-3 text-left" type="text" value="' +
+		value +
+		'" name="' +
+		inputId +
+		'" id="' +
+		inputId +
+		'" readonly /></td></tr>"';
+		console.log(markup);
 	$("#tableBody").append(markup);
 }
